@@ -12,3 +12,8 @@ def setup(ctx):
 @task
 def test(ctx):
     ctx.run("echo $TEST_ENV", pty=True)
+
+@task
+def setup_dvc(ctx):
+    ctx.run("dvc init", pty=True)
+    ctx.run("bash setup-dvc.sh", pty=True)
